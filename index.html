@@ -110,12 +110,12 @@
             display: inline-block;
             background: #e74c3c;
             color: white;
-            padding: 14px 35px;
+            padding: 14px 25px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
             transition: all 0.3s;
-            font-size: 18px;
+            font-size: 16px;
             border: 2px solid #e74c3c;
         }
         
@@ -281,7 +281,7 @@
         
         .books-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
         }
         
@@ -291,6 +291,24 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             transition: transform 0.3s;
+            position: relative;
+        }
+        
+        .featured-book {
+            border: 2px solid #e74c3c;
+        }
+        
+        .book-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 2;
         }
         
         .book-card:hover {
@@ -323,18 +341,88 @@
             font-size: 1.3rem;
         }
         
-        .book-info p {
+        .author {
             color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .book-info p {
+            color: #555;
             margin-bottom: 15px;
             font-size: 0.95rem;
+        }
+        
+        .price-options {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .price-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 8px;
+            background: white;
+            border-radius: 5px;
+        }
+        
+        .price-option:last-child {
+            margin-bottom: 0;
+        }
+        
+        .format {
+            font-weight: 500;
+            color: #2c3e50;
+            font-size: 0.9rem;
         }
         
         .price {
             font-weight: bold;
             color: #e74c3c;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            display: block;
+            font-size: 1.2rem;
+        }
+        
+        .price.digital {
+            color: #27ae60;
+        }
+        
+        .book-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .digital-btn {
+            background: #27ae60 !important;
+            border-color: #27ae60 !important;
+        }
+        
+        .digital-btn:hover {
+            background: transparent !important;
+            color: #27ae60 !important;
+        }
+        
+        .btn-preview {
+            display: inline-block;
+            background: transparent;
+            color: #e74c3c;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid #e74c3c;
+            font-size: 0.9rem;
+        }
+        
+        .btn-preview:hover {
+            background: #e74c3c;
+            color: white;
         }
         
         /* Seção Contactos */
@@ -504,6 +592,10 @@
             .btn-outline {
                 margin-left: 0;
             }
+            
+            .book-actions {
+                flex-direction: column;
+            }
         }
         
         @media (max-width: 480px) {
@@ -628,45 +720,4 @@
     </section>
 
     <!-- Seção Livros -->
-    <section class="books" id="livros">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nossas Publicações</h2>
-                <p>Conheça as nossas obras mais recentes</p>
-            </div>
-            <div class="books-grid">
-                <!-- Livro 1 -->
-                <div class="book-card">
-                    <div class="book-image">
-                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Romance Contemporâneo">
-                    </div>
-                    <div class="book-info">
-                        <h3>O Silêncio entre Nós</h3>
-                        <p>Um romance profundo sobre amor, perda e redescoberta na Lisboa contemporânea.</p>
-                        <span class="price">850,00 MZN</span>
-                        <a href="#" class="btn">Comprar</a>
-                    </div>
-                </div>
-                
-                <!-- Livro 2 -->
-                <div class="book-card">
-                    <div class="book-image">
-                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Coletânea de Contos">
-                    </div>
-                    <div class="book-info">
-                        <h3>Horizontes Possíveis</h3>
-                        <p>Coletânea de contos que exploram os limites da realidade e da imaginação.</p>
-                        <span class="price">650,00 MZN</span>
-                        <a href="#" class="btn">Comprar</a>
-                    </div>
-                </div>
-                
-                <!-- Livro 3 -->
-                <div class="book-card">
-                    <div class="book-image">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Poesia">
-                    </div>
-                    <div class="book-info">
-                        <h3>Versos do Tempo</h3>
-                        <p>Poesia que captura a essência fugaz dos momentos e a eternidade dos sentimentos.</p>
-                        <span class="price">5
+    <section class="boo
